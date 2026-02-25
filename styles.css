@@ -162,9 +162,11 @@ button { font-family: inherit; cursor: pointer; }
 .nav-link:hover,
 .dropdown-toggle:hover { color: var(--blue); background: var(--light); }
 
-/* Open chevron on hover (desktop) — target only the direct toggle, not nested category arrows */
-.has-dropdown:hover > .dropdown-toggle .chevron,
-.has-dropdown:hover > .nav-toggle-btn .chevron { transform: rotate(180deg); }
+/* Open chevron on hover (desktop only) */
+@media (min-width: 769px) {
+  .has-dropdown:hover > .dropdown-toggle .chevron,
+  .has-dropdown:hover > .nav-toggle-btn .chevron { transform: rotate(180deg); }
+}
 
 /* Dropdown — desktop hover */
 .dropdown {
