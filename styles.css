@@ -771,9 +771,11 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
   .dropdown li a:hover { padding-left: 50px; }
 
   /* Show the toggle button on mobile (hidden by default on desktop) */
-  .nav-toggle-btn { display: flex; align-items: center; padding: 15px 18px; border-bottom: 1px solid var(--border); }
+  .nav-toggle-btn { display: flex; align-items: center; padding: 15px 18px; border-bottom: none; }
   /* Let the Qualifications link fill available width, toggle sits at the right edge */
-  .nav-item-split .nav-link { flex: 1; width: auto; }
+  .nav-item-split .nav-link { flex: 1; width: auto; border-bottom: none; }
+  /* Single seamless border across the full Courses row (link + chevron button) */
+  .nav-item-split { border-bottom: 1px solid var(--border); }
 
   /* Extra indent for course links inside a category on mobile */
   .dropdown-submenu li a { padding-left: 64px; }
