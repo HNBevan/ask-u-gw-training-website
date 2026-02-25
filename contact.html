@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Ask U Training</title>
+  <link rel="stylesheet" href="styles.css" /></head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-text">
+          <strong><span class="logo-name-primary">Ask U</span><span class="logo-name-secondary"> Training</span></strong>
+          <small>In Association with GW Training</small>
+        </div>
+      </a>
+      <button class="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+
+        <li class="nav-item has-dropdown nav-item-split" id="qualDropdown">
+          <a href="qualifications.html" class="nav-link">Courses</a>
+          <button class="nav-toggle-btn" aria-label="Toggle Submenu" aria-expanded="false">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul class="dropdown" role="menu">
+            <!-- Health & Social Care -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Health &amp; Social Care <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="adult-social-care-certificate.html">Level 2 - Adult Social Care Certificate</a></li>
+                <li><a href="diploma-adult-care-level-3.html">Level 3 - Diploma in Adult Care</a></li>
+                <li><a href="diploma-adult-care-level-4.html">Level 4 - Diploma in Adult Care</a></li>
+                <li><a href="leadership-management-adult-care.html">Level 5 - Leadership &amp; Management</a></li>
+              </ul>
+            </li>
+            <!-- Children's Residential -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Children's Residential Care <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#childrens">Residential Childcare Courses</a></li>
+              </ul>
+            </li>
+            <!-- Early Years -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Early Years Training <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#early-years">Early Years Courses</a></li>
+              </ul>
+            </li>
+            <!-- Trainer / Assessor -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Trainer &amp; Assessor <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#trainer">Education &amp; Training Courses</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a href="index.html#funding" class="nav-link">Funding</a></li>
+        <li class="nav-item nav-cta-item"><a href="contact.html" class="btn btn-nav">Contact</a></li>
+      </ul>
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+  </header>
+
+  <!-- ========== CONTACT HERO ========== -->
+  <section class="contact-page-hero">
+
+    <div class="course-hero-media">
+      <div class="course-hero-img-fallback"></div>
+    </div>
+
+    <div class="course-hero-overlay"></div>
+
+    <div class="course-hero-content container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span class="current">Contact Us</span>
+      </nav>
+      <div class="course-level-badge">
+        <span class="badge">Get In Touch</span>
+        <span class="approved">We'd love to hear from you</span>
+      </div>
+      <h1>Contact Ask U Training</h1>
+      <p class="course-hero-sub">Have a question about our qualifications or funding? Our team is ready to help you every step of the way.</p>
+    </div>
+
+  </section>
+
+ 
+ 
+
+  <!-- ========== MAIN CONTACT SECTION ========== -->
+  <section class="contact-page-section">
+    <div class="container">
+      <div class="contact-page-grid">
+
+        <!-- Enquiry Form -->
+        <div class="contact-form-wrap">
+          <h2>Send Us an Enquiry</h2>
+          <p>Fill in the form below and a member of our team will be in touch shortly. All fields marked <span style="color:var(--amber)">*</span> are required.</p>
+
+          <!--
+            FORM SETUP NOTE:
+            To make this form submit emails, either:
+            1. Replace action="..." with your server-side form handler URL, or
+            2. Use a service like Formspree: action="https://formspree.io/f/YOUR_ID"
+            The mailto fallback below will open the user's email client.
+          -->
+          <form action="mailto:awtraining2025@outlook.com" method="POST" enctype="text/plain" novalidate>
+
+            <div class="form-group">
+              <label for="first-name">First Name <span>*</span></label>
+              <input type="text" id="first-name" name="first_name" placeholder="Jane" required />
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name <span>*</span></label>
+              <input type="text" id="last-name" name="last_name" placeholder="Smith" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span>*</span></label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+            </div>
+
+            <div class="form-group">
+              <label for="organisation">Organisation / Employer</label>
+              <input type="text" id="organisation" name="organisation" placeholder="Your company or care home name" />
+            </div>
+
+            <div class="form-group">
+              <label for="course">Qualification of Interest</label>
+              <select id="course" name="course">
+                <option value="" disabled selected>Select a qualification…</option>
+                <option value="level2">Level 2 - Adult Social Care Certificate</option>
+                <option value="level3">Level 3 - Diploma in Adult Care</option>
+                <option value="level4">Level 4 - Diploma in Adult Care</option>
+                <option value="level5">Level 5 - Leadership &amp; Management for Adult Care</option>
+                <option value="other">Other / Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message <span>*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us a little about what you're looking for, how many learners you have, or any questions you have about funding…" required></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-amber">Send Enquiry</button>
+              <p class="form-note">By submitting this form you agree to us contacting you regarding your enquiry. We will never share your details with third parties.</p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="contact-sidebar">
+
+          <!-- Jennette Askew -->
+          <div class="contact-info-card">
+            <div class="contact-info-card-header">
+              <div class="contact-avatar-lg">JA</div>
+              <div>
+                <h3>Jennette Askew</h3>
+                <p>Director of Compliance</p>
+              </div>
+            </div>
+            <div class="contact-info-body">
+              <div class="contact-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:07734347345">07734 347345</a>
+              </div>
+              <div class="contact-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:jennetteaskew1@outlook.com">jennetteaskew1@outlook.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gill West -->
+          <div class="contact-info-card">
+            <div class="contact-info-card-header">
+              <div class="contact-avatar-lg">GW</div>
+              <div>
+                <h3>Gill West</h3>
+                <p>Director of Quality</p>
+              </div>
+            </div>
+            <div class="contact-info-body">
+              <div class="contact-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:07795314160">07795 314160</a>
+              </div>
+              <div class="contact-info-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:awtraining2025@outlook.com">awtraining2025@outlook.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other courses -->
+          <div class="other-courses-card">
+            <h3>Other Qualifications Available</h3>
+            <p>We offer a wide range of vocational qualifications beyond Health &amp; Social Care. Are you interested in:</p>
+            <ul>
+              <li>Children's residential care</li>
+              <li>Early years training</li>
+              <li>Training to become a trainer or assessor</li>
+            </ul>
+            <p>Get in touch to find out more about our full course portfolio!</p>
+            <a href="mailto:awtraining2025@outlook.com" class="btn btn-white">Email Us</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+   <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img src="images/ask-u-training-logo.svg" alt="Ask U Training" class="footer-logo-img">
+            <img src="images/gw-training-logo.svg" alt="GW Training" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Working in Partnership to Deliver a High Quality Learning Experience</p>
+          <p class="footer-sub">Ask U Training | In Association with GW Training</p>
+          <div class="footer-accred-logos">
+            <img src="images/highfield-qualifications-image.svg" alt="Highfield Qualifications" class="footer-accred-img">
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Qualifications</h4>
+          <ul>
+            <li><a href="adult-social-care-certificate.html">Level 2 - Adult Social Care</a></li>
+            <li><a href="diploma-adult-care-level-3.html">Level 3 - Diploma in Adult Care</a></li>
+            <li><a href="diploma-adult-care-level-4.html">Level 4 - Diploma in Adult Care</a></li>
+            <li><a href="leadership-management-adult-care.html">Level 5 - Leadership &amp; Management</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#funding">Funding (LDSS)</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Jennette Askew<br><a href="tel:07734347345">07734 347345</a></p>
+          <p>Gill West<br><a href="tel:07795314160">07795 314160</a></p>
+          <p><a href="mailto:awtraining2025@outlook.com">awtraining2025@outlook.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ask U Training. All rights reserved.</p>
+        <p>Highfield Approved Training Provider &nbsp;|&nbsp; Centre Number: 40051</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

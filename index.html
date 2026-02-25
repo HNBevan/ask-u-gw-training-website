@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask U Training | In Association with GW Training</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <div class="logo-text">
+          <strong><span class="logo-name-primary">Ask U</span><span class="logo-name-secondary"> Training</span></strong>
+          <small>In Association with GW Training</small>
+        </div>
+      </a>
+
+      <!-- Burger (mobile only) -->
+      <button class="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav Menu -->
+      <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About Us</a>
+        </li>
+
+        <!-- Qualifications dropdown -->
+        <li class="nav-item has-dropdown nav-item-split" id="qualDropdown">
+          <a href="qualifications.html" class="nav-link">Courses</a>
+          <button class="nav-toggle-btn" aria-label="Toggle Submenu" aria-expanded="false">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="dropdown" role="menu">
+            
+            <!-- Health & Social Care -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Health &amp; Social Care <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="adult-social-care-certificate.html">Level 2 - Adult Social Care Certificate</a></li>
+                <li><a href="diploma-adult-care-level-3.html">Level 3 - Diploma in Adult Care</a></li>
+                <li><a href="diploma-adult-care-level-4.html">Level 4 - Diploma in Adult Care</a></li>
+                <li><a href="leadership-management-adult-care.html">Level 5 - Leadership &amp; Management</a></li>
+              </ul>
+            </li>
+
+            <!-- Children's Residential -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Children's Residential Care <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#childrens">Residential Childcare Courses</a></li>
+          
+              </ul>
+            </li>
+
+            <!-- Early Years -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Early Years Training <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#early-years">Early Years Courses</a></li>
+              </ul>
+            </li>
+
+            <!-- Trainer / Assessor -->
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">Trainer &amp; Assessor <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown dropdown-submenu">
+                <li><a href="qualifications.html#trainer">Education &amp; Training Courses</a></li>
+               
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#funding" class="nav-link">Funding</a>
+        </li>
+
+
+        <li class="nav-item nav-cta-item">
+          <a href="contact.html" class="btn btn-nav">Contact</a>
+        </li>
+
+      </ul>
+
+      <!-- Mobile overlay -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero" aria-label="Hero section">
+
+    <!-- Slideshow backgrounds -->
+    <div class="hero-slideshow" aria-hidden="true">
+
+      <div class="slide slide-1 active">
+        <img src="images/adult-care-hero.jpg" alt="Health and social care professionals">
+      </div>
+
+      <div class="slide slide-2">
+       <img src="images/early-years-training-hero.png" alt="Health and social care professionals">
+      </div>
+
+      <div class="slide slide-3">
+        <img src="images/leadership-management-hero.jpg" alt="Health and social care professionals">
+      </div>
+
+    </div>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <span class="hero-badge">Highfield Approved Training Provider &nbsp;|&nbsp; Centre: 40051</span>
+      <h1>Funded Health &amp; Social Care Qualifications</h1>
+      <p class="hero-text">Ask U Training in association with GW Training, delivering nationally recognised qualifications supporting care workers at every stage of their career.</p>
+      <div class="hero-ctas">
+        <a href="qualifications.html" class="btn btn-primary">View Courses</a>
+        <a href="#funding" class="btn btn-secondary">Explore Funding</a>
+      </div>
+      <!-- Slide indicators -->
+      <div class="hero-indicators" role="tablist" aria-label="Slide navigation">
+        <button class="indicator active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+        <button class="indicator" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+        <button class="indicator" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Accreditation trust strip -->
+      <div class="hero-accred">
+       
+        <div class="hero-accred-items">
+          <img src="images/highfield-qualifications-image.svg" alt="Highfield Qualifications" class="hero-accred-logo">
+          <img src="images/AoFas-image.svg" alt="AoFas" class="hero-accred-logo">
+          <img src="images/disability-confident-image.svg" alt="Disability Confident" class="hero-accred-logo">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== PARTNERSHIP BANNER ========== -->
+  <section class="partnership-banner" aria-label="Partnership logos">
+    <div class="container">
+      <div class="partner-logos">
+        <div class="partner-logo">
+          <img src="images/ask-u-training-logo.svg" alt="Ask U Training">
+        </div>
+
+        <div class="partner-divider">
+          <span class="divider-line"></span>
+          <span class="divider-text">In Association With</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="partner-logo">
+          <img src="images/gw-training-logo.svg" alt="GW Training">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-content">
+          <span class="section-tag">About Us</span>
+          <h2>Specialist Training Delivered with Care &amp; Expertise</h2>
+          <p>Ask U Training, working in partnership with GW Training, is a registered provider delivering specialist training across the Health and Social Care sector.</p>
+          <p>Every learner is assigned a dedicated assessor who is fully qualified and experienced within the sector, offering personalised guidance, constructive feedback and ongoing support through individually tailored learning plans, ensuring each learner's journey is enjoyable, achievable and meaningful.</p>
+          <p>Training is delivered via an online, user friendly e-portfolio system compatible with smartphones, tablets, PCs and laptops, allowing progress to be monitored and supported by the assessor in real time.</p>
+          <div class="about-ctas">
+            <a href="qualifications.html" class="btn btn-primary">Our Courses</a>
+            <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Dedicated Assessors</h3>
+            <p>Every learner has a fully qualified, sector experienced assessor providing personal support</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            </div>
+            <h3>Digital E-Portfolio</h3>
+            <p>User-friendly platform accessible on any device - smartphone, tablet, PC or laptop</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Nationally Recognised</h3>
+            <p>Qualifications approved by Skills for Care, meeting national sector standards</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><text x="12" y="17" text-anchor="middle" font-size="17" font-weight="700" font-family="Georgia,serif">&#163;</text></svg>
+            </div>
+            <h3>Funded Training</h3>
+            <p>LDSS funding available - up to 100% of costs covered for eligible employers</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUALIFICATIONS ========== -->
+  <section class="qualifications section" id="qualifications">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Our Programmes</span>
+        <h2>Qualifications Across Every Care Pathway</h2>
+        <p>Nationally recognised vocational qualifications covering Health &amp; Social Care, Children&#39;s Residential, Early Years and Trainer &amp; Assessor pathways</p>
+      </div>
+
+      <div class="qual-grid">
+
+        <!-- Health & Social Care -->
+        <article class="qual-card featured" data-reveal="top">
+          
+          <div class="qual-img">
+           <img src="images/adult-care-card.png" alt="Health and social care professionals">
+            <div class="qual-img-overlay">
+              <span class="qual-level-badge featured-badge">Levels 2 – 5</span>
+              <span class="featured-tag">LDSS Funded</span>
+            </div>
+          </div>
+          <div class="qual-body">
+            <h3>Health &amp; Social Care</h3>
+            <p>Nationally recognised qualifications supporting frontline care workers through to senior leaders and registered managers in the adult social care sector, fully funded through LDSS for eligible employers.</p>
+            <div class="qual-levels">
+              <a href="adult-social-care-certificate.html" class="level-tag">Level 2 - Adult Social Care</a>
+              <a href="diploma-adult-care-level-3.html" class="level-tag">Level 3 - Diploma in Adult Care</a>
+              <a href="diploma-adult-care-level-4.html" class="level-tag">Level 4 - Diploma in Adult Care</a>
+              <a href="leadership-management-adult-care.html" class="level-tag">Level 5 - Leadership &amp; Management</a>
+            </div>
+            <div class="qual-body-footer">
+              <a href="qualifications.html" class="btn btn-primary">View All Courses</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Children's Residential Care -->
+        <article class="qual-card" data-reveal="top">
+          <div class="qual-img">
+             <img src="images/childrens-residential-home-card.png" alt="Children's residential care professionals">
+          <div class="qual-img-overlay">
+              <span class="qual-level-badge">Levels 3 &amp; 5</span>
+            </div>
+          </div>
+          <div class="qual-body">
+            <h3>Children&#39;s Residential Care</h3>
+            <p>Qualifications for those working in children&#39;s residential settings, from Level 3 for frontline workers developing essential skills, to Level 5 for leaders and managers overseeing residential services.</p>
+            <div class="qual-levels">
+              <span class="level-tag">Level 3 - Residential Childcare</span>
+              <span class="level-tag">Level 5 - Leadership &amp; Management</span>
+            </div>
+            <div class="qual-body-footer">
+              <a href="qualifications.html#childrens" class="btn btn-outline">View Courses</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Early Years Training -->
+        <article class="qual-card" data-reveal="top">
+          <div class="qual-img">
+           <img src="images/early-years-card.png" alt="Early years training professionals">
+            <div class="qual-img-overlay">
+              <span class="qual-level-badge">Level 3</span>
+            </div>
+          </div>
+          <div class="qual-body">
+            <h3>Early Years Training</h3>
+            <p>Develop the knowledge, skills and practice needed to work effectively with young children in early years settings including nurseries, pre-schools and childminding services.</p>
+            <div class="qual-levels">
+              <span class="level-tag">Level 3 - Early Years Workforce</span>
+            </div>
+            <div class="qual-body-footer">
+              <a href="qualifications.html#early-years" class="btn btn-outline">View Courses</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer & Assessor -->
+        <article class="qual-card" data-reveal="top">
+            <div class="qual-img">
+              <img src="images/health-care-trainer-card.png" alt="Healthcare trainer and assessor professionals">
+            <div class="qual-img-overlay">
+              <span class="qual-level-badge">Level 3</span>
+            </div>
+          </div>
+          <div class="qual-body">
+            <h3>Trainer &amp; Assessor</h3>
+            <p>Gain the qualifications needed to deliver or assess vocational training. Whether you want to teach and train others or assess learners in the workplace, we have the right pathway for you.</p>
+            <div class="qual-levels">
+              <span class="level-tag">AET - Award in Education &amp; Training</span>
+              <span class="level-tag">CAVA - Certificate of Assessing</span>
+            </div>
+            <div class="qual-body-footer">
+              <a href="qualifications.html#trainer" class="btn btn-outline">View Courses</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ========== CTA STRIP ========== -->
+  <section class="cta-strip" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div class="cta-strip-text">
+          <h2>Ready to Upskill Your Team?</h2>
+          <p>Find out how LDSS funding can cover up to 100% of training costs for your organisation</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="#funding" class="btn btn-white">About Funding</a>
+          <a href="#contact" class="btn btn-amber">Contact Us Today</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FUNDING ========== -->
+  <section class="funding section" id="funding">
+    <div class="container">
+      <div class="funding-grid">
+
+        <div class="funding-content">
+          <span class="section-tag light">Funding</span>
+          <h2>Learning &amp; Development Support Scheme</h2>
+          <p>The LDSS helps adult social care employers significantly reduce the cost of staff training, supporting workforce development from new care workers right through to senior leaders and managers.</p>
+
+          <div class="funding-split">
+            <div class="funding-amount">
+              <span class="percent">60%</span>
+              <span class="label">At Enrolment</span>
+            </div>
+            <div class="funding-plus">+</div>
+            <div class="funding-amount">
+              <span class="percent">40%</span>
+              <span class="label">On Completion</span>
+            </div>
+          </div>
+
+          <p class="funding-note">Funding is available to employers registered with the Adult Social Care Workforce Data Set (ASC-WDS), covering Levels 2, 3, 4 and 5.</p>
+          <a href="#contact" class="btn btn-white">Find Out More</a>
+        </div>
+
+        <div class="funding-benefits">
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>Workforce Development</h4>
+              <p>Support your team's growth - from new starters to registered managers</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>Strengthens Compliance</h4>
+              <p>Meet regulatory requirements with nationally recognised qualifications</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>Levels 2 - 5 Covered</h4>
+              <p>Full pathway from frontline care worker to senior leader</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>Significant Cost Reduction</h4>
+              <p>Employer funded training made affordable through government support</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Start Your Learning Journey Today</h2>
+        <p>Interested in our qualifications or funding options? Our experienced team is ready to guide you every step of the way.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-avatar">JA</div>
+          <h3>Jennette Askew</h3>
+          <p class="contact-role">Director of Compliance</p>
+          <div class="contact-links">
+            <a href="tel:07734347345" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              07734 347345
+            </a>
+            <a href="mailto:jennetteaskew1@outlook.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              jennetteaskew1@outlook.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-avatar">GW</div>
+          <h3>Gill West</h3>
+          <p class="contact-role">Director of Quality</p>
+          <div class="contact-links">
+            <a href="tel:07795314160" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              07795 314160
+            </a>
+            <a href="mailto:awtraining2025@outlook.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              awtraining2025@outlook.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-other">
+          <h3>Other Vocational Courses Available</h3>
+          <p>We offer a wide range of vocational qualifications beyond Health &amp; Social Care. Are you interested in:</p>
+          <ul>
+            <li>Children's residential care</li>
+            <li>Early years training</li>
+            <li>Training to become a trainer or assessor</li>
+          </ul>
+          <p class="contact-other-sub">Get in touch to find out more about our full course portfolio, we'd love to hear from you!</p>
+          <a href="mailto:awtraining2025@outlook.com" class="btn btn-primary">Send Us an Enquiry</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img src="images/ask-u-training-logo.svg" alt="Ask U Training" class="footer-logo-img">
+            <img src="images/gw-training-logo.svg" alt="GW Training" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Working in Partnership to Deliver a High Quality Learning Experience</p>
+          <p class="footer-sub">Ask U Training | In Association with GW Training</p>
+          <div class="footer-accred-logos">
+            <img src="images/highfield-qualifications-image.svg" alt="Highfield Qualifications" class="footer-accred-img">
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Qualifications</h4>
+          <ul>
+            <li><a href="adult-social-care-certificate.html">Level 2 - Adult Social Care</a></li>
+            <li><a href="diploma-adult-care-level-3.html">Level 3 - Diploma in Adult Care</a></li>
+            <li><a href="diploma-adult-care-level-4.html">Level 4 - Diploma in Adult Care</a></li>
+            <li><a href="leadership-management-adult-care.html">Level 5 - Leadership &amp; Management</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#funding">Funding (LDSS)</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Jennette Askew<br><a href="tel:07734347345">07734 347345</a></p>
+          <p>Gill West<br><a href="tel:07795314160">07795 314160</a></p>
+          <p><a href="mailto:awtraining2025@outlook.com">awtraining2025@outlook.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ask U Training. All rights reserved.</p>
+        <p>Highfield Approved Training Provider &nbsp;|&nbsp; Centre Number: 40051</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
