@@ -24,6 +24,29 @@
   let   current    = 0;
   let   slideTimer = null;
 
+  /* Per-slide heading and subtext — must match slide order in HTML */
+  const slideTexts = [
+    {
+      heading: 'Accredited Training Providers',
+      sub:     'Ask U Training in association with GW Training, delivering nationally recognised qualifications supporting you at every stage of your career.'
+    },
+    {
+      heading: 'Health & Social Care Training',
+      sub:     'From entry level certificates to advanced diplomas, our comprehensive health and social care courses are designed to empower care professionals with the skills and knowledge needed to excel in their roles.'
+    },
+    {
+      heading: 'Develop Future Leaders & Managers',
+      sub:     'From frontline practitioners to registered managers, we support every stage of your care career with specialist leadership training.'
+    },
+    {
+      heading: 'Early Years & Childcare Training',
+      sub:     'Our childcare courses are designed to equip early years professionals with the skills and knowledge needed to provide high-quality care and education for children.'
+    },
+  ];
+
+  const heroH1 = qs('.hero-content h1');
+  const heroP  = qs('.hero-content .hero-text');
+
   function goToSlide(index) {
     slides[current].classList.remove('active');
     indicators[current].classList.remove('active');
@@ -34,6 +57,18 @@
     slides[current].classList.add('active');
     indicators[current].classList.add('active');
     indicators[current].setAttribute('aria-selected', 'true');
+
+    /* Cross-fade the hero heading and subtext */
+    if (heroH1 && heroP && slideTexts[current]) {
+      heroH1.style.opacity = '0';
+      heroP.style.opacity  = '0';
+      setTimeout(() => {
+        heroH1.textContent = slideTexts[current].heading;
+        heroP.textContent  = slideTexts[current].sub;
+        heroH1.style.opacity = '1';
+        heroP.style.opacity  = '1';
+      }, 380);
+    }
   }
 
   function nextSlide() {
@@ -104,6 +139,8 @@
     burger.classList.remove('open');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    // Reset per-category accordion states
+    qsa('.mega-col').forEach(c => c.classList.remove('open'));
   }
 
   if (burger) {
@@ -165,10 +202,29 @@
   // Skip .submenu-toggle links — those just expand a nested list and must NOT close the nav.
   qsa('.dropdown li a').forEach(link => {
     link.addEventListener('click', () => {
-      if (isMobile() && !link.classList.contains('submenu-toggle')) {
+      if (isMobile() && !link.classList.contains('submenu-toggle') && !link.classList.contains('mega-col-header')) {
         dropdownItems.forEach(item => item.classList.remove('open'));
         closeNav();
       }
+    });
+  });
+
+  /* ============================================================
+     MEGA MENU — mobile per-category accordion
+     Each .mega-col-header toggles its sibling .mega-course-list.
+     On desktop the headers are plain links; JS only fires on mobile.
+     ============================================================ */
+  // mega-col-header links navigate to their page on both desktop and mobile.
+  // The .mega-col-expand span inside each header toggles the accordion on mobile.
+  qsa('.mega-col-expand').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();       // don't navigate
+      e.stopPropagation();      // don't trigger the parent <a>
+      if (!isMobile()) return;  // on desktop, hover handles expansion via CSS
+      const col = btn.closest('.mega-col');
+      const isOpen = col.classList.contains('open');
+      qsa('.mega-col').forEach(c => c.classList.remove('open'));
+      if (!isOpen) col.classList.add('open');
     });
   });
 
@@ -296,5 +352,80 @@
   const style = document.createElement('style');
   style.textContent = '.visible { opacity: 1 !important; transform: none !important; }';
   document.head.appendChild(style);
+
+
+  /* ============================================================
+     HERO COURSE SEARCH
+     ============================================================ */
+  const courses = [
+    // Leadership / Management / Business
+    { name: 'Leadership & Management',                        category: 'Leadership, Management & Business', url: 'contact.html' },
+    { name: 'Business Training',                              category: 'Leadership, Management & Business', url: 'contact.html' },
+    // Health & Safety
+    { name: 'Health & Safety',                                category: 'Health & Safety',             url: 'contact.html' },
+    // Health & Social Care
+    { name: 'Level 2 – Adult Social Care Certificate',        category: 'Health & Social Care',        url: 'health-social-care.html' },
+    { name: 'Level 3 – Diploma in Adult Care',                category: 'Health & Social Care',        url: 'health-social-care.html' },
+    { name: 'Level 4 – Diploma in Adult Care',                category: 'Health & Social Care',        url: 'health-social-care.html' },
+    { name: 'Level 5 – Leadership & Management in Adult Care',category: 'Health & Social Care',        url: 'health-social-care.html' },
+    // Champions in Care
+    { name: 'Champions in Care',                              category: 'Champions in Care Training',  url: 'contact.html' },
+    // Child Care Training
+    { name: 'Level 3 – Diploma for Residential Childcare',   category: 'Child Care Training',         url: 'childrens-residential.html' },
+    { name: 'Level 4 – Diploma for Residential Childcare',   category: 'Child Care Training',         url: 'childrens-residential.html' },
+    // Childcare & Education
+    { name: 'Level 3 – Early Years Educator',                category: 'Childcare & Education',       url: 'early-years.html' },
+    { name: 'Level 5 – Early Years Lead Practitioner',       category: 'Childcare & Education',       url: 'early-years.html' },
+    // First Aid
+    { name: 'Emergency First Aid at Work',                    category: 'First Aid',                   url: 'contact.html' },
+    { name: 'Paediatric First Aid',                           category: 'First Aid',                   url: 'contact.html' },
+    { name: 'First Aid at Work',                              category: 'First Aid',                   url: 'contact.html' },
+    // Diploma Training
+    { name: 'Diploma Training',                               category: 'Diploma Training',            url: 'contact.html' },
+  ];
+
+  const searchInput   = qs('#heroSearch');
+  const searchResults = qs('#heroSearchResults');
+
+  if (searchInput && searchResults) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (!query) { searchResults.hidden = true; return; }
+
+      const matches = courses.filter(c =>
+        c.name.toLowerCase().includes(query) ||
+        c.category.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'search-no-results';
+        li.textContent = 'No courses found for "' + searchInput.value + '"';
+        searchResults.appendChild(li);
+      } else {
+        matches.forEach(c => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${c.url}"><span class="result-name">${c.name}</span><span class="result-cat">${c.category}</span></a>`;
+          searchResults.appendChild(li);
+        });
+      }
+
+      searchResults.hidden = false;
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchInput.closest('.hero-search').contains(e.target)) {
+        searchResults.hidden = true;
+      }
+    });
+
+    // Close on Escape key
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { searchResults.hidden = true; searchInput.blur(); }
+    });
+  }
 
 })();

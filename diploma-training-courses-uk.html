@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accredited Diploma Training Courses UK | Levels 2–5 | Ask U Training</title>
+  <meta name="description" content="Highfield-approved diploma training courses across the UK from Level 2 to Level 5. Health & social care, childcare, education and more - delivered online with a dedicated assessor. Funding may be available." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .upskill-section {
+      background: linear-gradient(135deg, #0f2d6b 0%, #1a4fa8 55%, #1b5fcc 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .upskill-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .upskill-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .upskill-section .section-tag {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+    .upskill-section h2 {
+      color: #fff;
+    }
+    .upskill-section > .container > .upskill-inner > p {
+      color: rgba(255,255,255,0.88);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .upskill-list {
+      list-style: none;
+      padding: 0;
+      margin: 32px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 700px;
+    }
+    .upskill-list li {
+      background: rgba(5, 18, 60, 0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 14px 16px 14px 44px;
+      position: relative;
+      color: #fff;
+      line-height: 1.45;
+      font-size: 0.95rem;
+      text-align: left;
+      backdrop-filter: blur(4px);
+    }
+    .upskill-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      color: var(--amber, #e8a020);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    @media (max-width: 600px) {
+      .upskill-list { grid-template-columns: 1fr; }
+    }
+    .funding-cta-section {
+      background: var(--navy, #0d1b3e);
+      color: #fff;
+    }
+    .funding-cta-section .section-tag {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .funding-cta-section h2 {
+      color: #fff;
+    }
+    .funding-cta-section .section-sub {
+      color: rgba(255,255,255,0.82);
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .funding-contacts {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 36px 0 32px;
+    }
+    .funding-contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius, 12px);
+      padding: 28px 40px;
+      text-align: center;
+      min-width: 220px;
+    }
+    .funding-contact-card h3 {
+      color: #fff;
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+    .funding-phone {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--amber, #e8a020);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .funding-phone:hover {
+      text-decoration: underline;
+    }
+    .funding-cta-btn {
+      text-align: center;
+    }
+    .duration-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 36px 0 48px;
+    }
+    .duration-card {
+      background: var(--white, #fff);
+      border-radius: var(--radius, 12px);
+      border-top: 4px solid var(--amber, #e8a020);
+      padding: 22px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.07));
+    }
+    .duration-level {
+      display: inline-block;
+      background: var(--navy, #0d1b3e);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 20px;
+      padding: 3px 12px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .duration-time {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy, #0d1b3e);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .duration-label {
+      font-size: 0.8rem;
+      color: var(--text-muted, #888);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    @media (max-width: 600px) {
+      .duration-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ---- Hero entrance cascade ---- */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .course-hero-content .hero-badge       { animation: heroFadeUp 0.6s ease 0.15s both; }
+    .course-hero-content h1                { animation: heroFadeUp 0.65s ease 0.3s both; }
+    .course-hero-content .course-hero-sub  { animation: heroFadeUp 0.65s ease 0.45s both; }
+    .course-hero-content .course-hero-ctas { animation: heroFadeUp 0.65s ease 0.6s both; }
+
+    /* ---- Scroll reveal keyframes ---- */
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes revealLeft {
+      from { opacity: 0; transform: translateX(-24px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .pre-reveal       { opacity: 0 !important; }
+    .play-reveal-up   { animation: revealUp   0.65s cubic-bezier(0.16,1,0.3,1) both; }
+    .play-reveal-left { animation: revealLeft 0.52s cubic-bezier(0.16,1,0.3,1) both; }
+
+    /* ---- Duration card hover ---- */
+    .duration-card {
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-top-color 0.26s ease;
+      cursor: default;
+    }
+    .duration-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.14);
+      border-top-color: var(--navy, #0d1b3e);
+    }
+    .duration-card:hover .duration-time  { color: var(--amber, #e8a020); transition: color 0.2s ease; }
+    .duration-card:hover .duration-level { background: var(--amber, #e8a020); transition: background 0.2s ease; }
+
+    /* ---- Upskill list item hover ---- */
+    .upskill-list li {
+      transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+    }
+    .upskill-list li:hover {
+      background: rgba(5, 18, 60, 0.68);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateX(5px);
+    }
+
+    /* ---- Funding contact card hover ---- */
+    .funding-contact-card {
+      transition: background 0.22s ease, border-color 0.22s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .funding-contact-card:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.32);
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.28);
+    }
+
+    /* ---- Course card enhanced hover ---- */
+    .course-card {
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s ease, border-top-color 0.28s ease;
+    }
+    .course-card:hover { border-top-color: var(--navy, #0d1b3e); }
+
+    /* ---- Course search bar ---- */
+    .course-search-wrap {
+      margin: 0 0 40px;
+    }
+    .course-search-inner {
+      position: relative;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .course-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #aaa;
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+    .course-search-input {
+      width: 100%;
+      padding: 15px 52px 15px 52px;
+      border: 2px solid #e2e5ea;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      color: var(--text-dark, #1a1a2e);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      box-sizing: border-box;
+    }
+    .course-search-input:focus {
+      border-color: var(--amber, #e8a020);
+      box-shadow: 0 0 0 4px rgba(232,160,32,0.14), 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .course-search-input::placeholder { color: #bbb; }
+    .course-search-clear {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #f0f1f3;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 5px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .course-search-clear:hover { background: var(--navy, #0d1b3e); color: #fff; }
+    .course-search-clear svg { width: 14px; height: 14px; }
+    .course-no-results {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 56px 20px;
+      color: var(--text-muted, #888);
+    }
+    .course-no-results.show { display: block; }
+    .course-no-results strong { display: block; font-size: 1.1rem; color: var(--text-dark, #1a1a2e); margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+
+            <a href="index.html" class="nav-logo">
+        <img src="images/ask-u-training-gw-training-logo.svg" alt="Ask U Training in Association with GW Training" class="nav-logo-img">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li class="nav-item has-dropdown nav-item-split" id="qualDropdown">
+          <span class="nav-link nav-courses-label">Courses</span>
+          <button class="nav-toggle-btn" aria-label="Toggle Submenu" aria-expanded="false">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul class="dropdown mega-menu" role="menu">
+            <li class="mega-col">
+              <a href="health-social-care.html" class="mega-col-header">Health &amp; Social Care<span class="mega-col-expand">+</span></a>
+              <ul class="mega-course-list">
+                <li><a href="health-social-care.html#epilepsy-awareness">Epilepsy Awareness Training</a></li>
+                <li><a href="health-social-care.html#learning-disabilities">Learning Disabilities Awareness</a></li>
+                <li><a href="health-social-care.html#oral-health-care">Oral Health Care Training</a></li>
+              </ul>
+            </li>
+            <li class="mega-col">
+              <a href="contact.html" class="mega-col-header">Health &amp; Safety</a>
+            </li>
+            <li class="mega-col">
+              <a href="childrens-residential.html" class="mega-col-header">Child Care Training</a>
+            </li>
+            <li class="mega-col">
+              <a href="early-years.html" class="mega-col-header">Childcare &amp; Education</a>
+            </li>
+            <li class="mega-col">
+              <a href="contact.html" class="mega-col-header">Leadership, Management &amp; Business</a>
+            </li>
+            <li class="mega-col">
+              <a href="contact.html" class="mega-col-header">Champions in Care Training</a>
+            </li>
+            <li class="mega-col">
+              <a href="contact.html" class="mega-col-header">First Aid</a>
+            </li>
+            <li class="mega-col">
+              <a href="diploma-training-courses-uk.html" class="mega-col-header">Diploma Training<span class="mega-col-expand">+</span></a>
+              <ul class="mega-course-list">
+                <li><a href="diploma-training-courses-uk.html#adult-care-diplomas">Adult Care Diplomas (Levels 2&ndash;5)</a></li>
+                <li><a href="diploma-training-courses-uk.html#adult-care-unit-guidance">Adult Care Diploma Unit Guidance</a></li>
+                <li><a href="diploma-training-courses-uk.html#residential-child-care">Residential Child Care Diplomas</a></li>
+                <li><a href="diploma-training-courses-uk.html#teaching-learning-schools">Supporting Teaching &amp; Learning in Schools</a></li>
+                <li><a href="diploma-training-courses-uk.html#teaching-learning-unit-guidance">Supporting Teaching &amp; Learning Unit Guidance</a></li>
+                <li><a href="diploma-training-courses-uk.html#child-care-unit-guidance">Child Care Unit Support &amp; Guidance</a></li>
+                <li><a href="diploma-training-courses-uk.html#management-diplomas">Management Diplomas</a></li>
+                <li><a href="diploma-training-courses-uk.html#customer-service-diploma">Customer Service Diploma</a></li>
+                <li><a href="diploma-training-courses-uk.html#business-admin-diploma">Business Administration Diploma</a></li>
+                <li><a href="diploma-training-courses-uk.html#adult-social-care-certificate">Adult Social Care Certificate</a></li>
+                <li><a href="diploma-training-courses-uk.html#early-years-educator">Early Years Educator (EYE) Diploma</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+        <li class="nav-item nav-cta-item"><a href="contact.html" class="btn btn-nav">Contact</a></li>
+      </ul>
+
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+  </header>
+
+  <!-- ========== CATEGORY HERO ========== -->
+  <section class="course-hero" aria-label="Diploma Training courses">
+    <div class="course-hero-media">
+      <img src="images/qualifications-hero.jpg" alt="Diploma training courses" />
+    </div>
+    <div class="course-hero-overlay"></div>
+    <div class="course-hero-content container">
+      <span class="hero-badge">Accredited UK Diploma Training Provider</span>
+      <h1>Diploma Training Courses Across the UK</h1>
+      <p class="course-hero-sub">Highfield approved, nationally recognised qualifications from Level 2 to Level 5, delivered online with a dedicated assessor. Supporting learners in health &amp; social care, childcare, education and more, across England, Scotland and Wales. Funding may be available.</p>
+      <div class="course-hero-ctas">
+        <a href="contact.html" class="btn btn-primary">Start My Journey Today</a>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COURSES ========== -->
+  <section class="category-section section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Diploma Training</span>
+        <h2>Our Courses</h2>
+        <p class="section-sub">All qualifications are delivered online with a dedicated assessor and get in touch to see if you are eligible for funding support. We work with learners and organisations across the whole of the UK, including face-to-face and on-site sessions where needed. Enquire today to find the right solution for you.</p>
+      </div>
+
+      <!-- Duration reference -->
+      <div class="duration-strip">
+        <div class="duration-card">
+          <span class="duration-level">Level 2</span>
+          <div class="duration-time">6</div>
+          <div class="duration-label">Months</div>
+        </div>
+        <div class="duration-card">
+          <span class="duration-level">Level 3</span>
+          <div class="duration-time">9</div>
+          <div class="duration-label">Months</div>
+        </div>
+        <div class="duration-card">
+          <span class="duration-level">Level 4</span>
+          <div class="duration-time">12</div>
+          <div class="duration-label">Months</div>
+        </div>
+        <div class="duration-card">
+          <span class="duration-level">Level 5</span>
+          <div class="duration-time">15</div>
+          <div class="duration-label">Months</div>
+        </div>
+      </div>
+
+      <!-- Search / filter -->
+      <div class="course-search-wrap">
+        <div class="course-search-inner">
+          <svg class="course-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="courseFilter" class="course-search-input" placeholder="Search courses e.g. 'adult care', 'management'…" autocomplete="off" />
+          <button class="course-search-clear" id="courseFilterClear" aria-label="Clear search" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="course-cards-grid">
+
+        <div class="course-no-results" id="courseNoResults">
+          <strong>No courses found</strong>
+          Try a different keyword or <button onclick="document.getElementById('courseFilter').value='';document.getElementById('courseFilter').dispatchEvent(new Event('input'));" style="background:none;border:none;color:var(--amber,#e8a020);cursor:pointer;font-size:inherit;padding:0;text-decoration:underline;">clear the search</button>
+        </div>
+
+        <article class="course-card" id="adult-care-diplomas" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2&ndash;5</span>
+            <h3>Adult Care Diplomas</h3>
+          </div>
+          <p class="course-card-desc">Nationally recognised diplomas covering the full range of adult care roles, from frontline care workers to senior practitioners. Available at Levels 2, 3, 4 and 5 to support career progression at every stage.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Safeguarding</li>
+              <li>Person-Centred Care</li>
+              <li>Health &amp; Well-being</li>
+              <li>Equality &amp; Diversity</li>
+              <li>Communication</li>
+              <li>Infection Prevention</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Highfield Approved
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="adult-care-unit-guidance" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2&ndash;5</span>
+            <h3>Adult Care Diploma Unit Guidance</h3>
+          </div>
+          <p class="course-card-desc">Structured unit-by-unit guidance to support learners completing their Adult Care Diplomas at Levels 2, 3, 4 and 5 &mdash; ensuring confidence and competence in each assessed unit from enrolment to completion.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Unit Planning</li>
+              <li>Evidence Gathering</li>
+              <li>Reflective Practice</li>
+              <li>Assessment Criteria</li>
+              <li>Portfolio Building</li>
+              <li>Learner Support</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="residential-child-care" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2&ndash;5</span>
+            <h3>Residential Child Care Diplomas</h3>
+          </div>
+          <p class="course-card-desc">Qualifications for those working in children's residential care settings at all levels, developing the skills and knowledge to support children and young people in safe, caring and nurturing environments.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Safeguarding Children</li>
+              <li>Child Development</li>
+              <li>Therapeutic Approaches</li>
+              <li>Health &amp; Well-being</li>
+              <li>Risk Management</li>
+              <li>Professional Practice</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="teaching-learning-schools" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2 - 3</span>
+            <h3>Supporting Teaching &amp; Learning in Schools</h3>
+          </div>
+          <p class="course-card-desc">For teaching assistants and support staff in primary and secondary schools, developing the skills to support teachers and promote effective learning outcomes for all pupils.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Classroom Support</li>
+              <li>Child Development</li>
+              <li>Communication</li>
+              <li>SEN Support</li>
+              <li>Behaviour Management</li>
+              <li>Safeguarding</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="teaching-learning-unit-guidance" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Level 3</span>
+            <h3>Supporting Teaching &amp; Learning - Diploma Individual Unit Guidance</h3>
+          </div>
+          <p class="course-card-desc">Dedicated unit support and guidance for the Level 3 Diploma in Supporting Teaching and Learning in Schools, helping learners build evidence and develop competence unit by unit.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Unit Planning</li>
+              <li>Evidence Portfolio</li>
+              <li>Reflective Learning</li>
+              <li>Assessment Criteria</li>
+              <li>Classroom Practice</li>
+              <li>Learner Development</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="child-care-unit-guidance" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2, 3 &amp; 5</span>
+            <h3>Child Care Individual Unit Support &amp; Guidance</h3>
+          </div>
+          <p class="course-card-desc">Personalised support and guidance for learners completing Child Care qualifications at Levels 2, 3 and 5, providing structured help with each unit from enrolment through to completion.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Unit Guidance</li>
+              <li>Portfolio Evidence</li>
+              <li>Safeguarding</li>
+              <li>Child Development</li>
+              <li>Practice Assessment</li>
+              <li>Reflective Learning</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="management-diplomas" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Level 5</span>
+            <h3>Management Diplomas</h3>
+          </div>
+          <p class="course-card-desc">Advanced management qualifications for experienced professionals developing strategic leadership, operational management and organisational performance skills at Level 5.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Strategic Leadership</li>
+              <li>Operational Management</li>
+              <li>Financial Management</li>
+              <li>Performance Management</li>
+              <li>HR &amp; Team Development</li>
+              <li>Governance</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="customer-service-diploma" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2&ndash;3</span>
+            <h3>Customer Service Diploma</h3>
+          </div>
+          <p class="course-card-desc">Nationally recognised qualifications developing the skills and knowledge to deliver excellent customer service, handle complaints effectively and build lasting positive relationships with customers.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Customer Interaction</li>
+              <li>Communication</li>
+              <li>Problem Solving</li>
+              <li>Complaint Handling</li>
+              <li>Teamwork</li>
+              <li>Professional Standards</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="business-admin-diploma" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Levels 2&ndash;3</span>
+            <h3>Business Administration Diploma</h3>
+          </div>
+          <p class="course-card-desc">Develop the administrative, communication and organisational skills needed to support business operations effectively, from entry-level roles through to senior administrative positions.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Administrative Skills</li>
+              <li>Communication</li>
+              <li>IT &amp; Digital</li>
+              <li>Record Keeping</li>
+              <li>Teamwork &amp; Collaboration</li>
+              <li>Business Processes</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="adult-social-care-certificate" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Level 2 &mdash; New</span>
+            <h3>Adult Social Care Certificate</h3>
+          </div>
+          <p class="course-card-desc">The new Level 2 Adult Social Care Certificate, a nationally recognised qualification for frontline adult care workers, aligned to the latest Skills for Care standards and the competence requirement for Level 2 care workers.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Safeguarding</li>
+              <li>Person-Centred Care</li>
+              <li>Well-being</li>
+              <li>Equality &amp; Diversity</li>
+              <li>Infection Prevention</li>
+              <li>Digital Skills</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Highfield Approved
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              LDSS Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+        <article class="course-card" id="early-years-educator" data-reveal="top">
+          <div class="course-card-header">
+            <span class="course-level-badge">Level 3</span>
+            <h3>Early Years Educator (EYE) Diploma</h3>
+          </div>
+          <p class="course-card-desc">A nationally recognised Level 3 qualification preparing learners to work as Early Years Educators with children from birth to 5 years, delivering high-quality early education and childcare across a range of settings.</p>
+          <div class="course-card-areas">
+            <h4>Content Overview</h4>
+            <ul>
+              <li>Child Development (0&ndash;5)</li>
+              <li>Safeguarding &amp; Welfare</li>
+              <li>Learning Through Play</li>
+              <li>Communication &amp; Language</li>
+              <li>Health &amp; Well-being</li>
+              <li>Working in Partnership</li>
+            </ul>
+          </div>
+          <p><em>For full course details and to book, please get in touch.</em></p>
+          <div class="course-card-meta">
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Dedicated Assessor
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Online E-Portfolio
+            </span>
+            <span class="course-meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Funding Available
+            </span>
+          </div>
+          <a href="contact.html" class="btn btn-nav">Enquire Now</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== UPSKILL YOUR TEAM ========== -->
+  <section class="section upskill-section">
+    <div class="container">
+      <div class="upskill-inner">
+        <span class="section-tag">Team Development</span>
+        <h2>Upskill Your Entire Team</h2>
+        <p>Whether you're looking to develop one member of staff or an entire workforce, we work with organisations of all sizes to deliver tailored diploma training programmes across the UK. Our dedicated assessors work alongside your team throughout the qualification, ensuring every learner has the individual support they need to succeed, without disrupting day-to-day operations.</p>
+        <ul class="upskill-list">
+          <li>Flexible delivery to fit around shift patterns and workloads</li>
+          <li>Group enrolments with a single point of contact</li>
+          <li>Face-to-face and on-site sessions available nationwide</li>
+          <li>Dedicated assessor from enrolment through to completion</li>
+          <li>Progress tracking and regular updates for managers</li>
+          <li>Suitable for new starters and experienced staff alike</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FUNDING CTA ========== -->
+  <section class="section funding-cta-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Funding</span>
+        <h2>Could Your Team Be Eligible for Funding?</h2>
+        <p class="section-sub">Many of our diploma qualifications may be eligible for government and LDSS funding, which could significantly reduce or fully cover the cost of training for your staff. Get in touch with our team today to find out what funding is available for your organisation.</p>
+      </div>
+      <div class="funding-contacts">
+        <div class="funding-contact-card">
+          <h3>Jennette Askew</h3>
+          <a href="tel:07734347345" class="funding-phone">07734 347345</a>
+        </div>
+        <div class="funding-contact-card">
+          <h3>Gill West</h3>
+          <a href="tel:07795314160" class="funding-phone">07795 314160</a>
+        </div>
+      </div>
+      <div class="funding-cta-btn">
+        <a href="contact.html" class="btn btn-nav">Contact Us About Funding</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img src="images/ask-u-training-logo.svg" alt="Ask U Training" class="footer-logo-img">
+            <img src="images/gw-training-logo.svg" alt="GW Training" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Working in Partnership to Deliver a High Quality Learning Experience</p>
+          <p class="footer-sub">Ask U Training | In Association with GW Training</p>
+          <div class="footer-accred-logos">
+            <img src="images/highfield-qualifications-image.svg" alt="Highfield Qualifications" class="footer-accred-img">
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="health-social-care.html">Health &amp; Social Care</a></li>
+            <li><a href="childrens-residential.html">Children's Residential Care</a></li>
+            <li><a href="early-years.html">Early Years Training</a></li>
+            <li><a href="trainer-assessor.html">Trainer &amp; Assessor</a></li>
+            <li><a href="diploma-training-courses-uk.html">Diploma Training</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#funding">Funding (LDSS)</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Jennette Askew<br><a href="tel:07734347345">07734 347345</a></p>
+          <p>Gill West<br><a href="tel:07795314160">07795 314160</a></p>
+          <p><a href="mailto:awtraining2025@outlook.com">awtraining2025@outlook.com</a></p>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ask U Training &amp; GW Training. All rights reserved.</p>
+        <p>Highfield Approved Training Provider &nbsp;|&nbsp; Centre Number: 40051</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+
+    /* --- Stagger reveal: course cards, duration cards, funding contact cards --- */
+    const cardEls = document.querySelectorAll('.course-card, .duration-card, .funding-contact-card');
+    cardEls.forEach(el => el.classList.add('pre-reveal'));
+
+    const cardObs = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting);
+      visible.sort((a, b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
+      visible.forEach((entry, i) => {
+        const el = entry.target;
+        setTimeout(() => {
+          el.classList.remove('pre-reveal');
+          el.classList.add('play-reveal-up');
+          el.addEventListener('animationend', () => el.classList.remove('play-reveal-up'), { once: true });
+        }, i * 75);
+        cardObs.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 100px 0px' });
+
+    cardEls.forEach(el => cardObs.observe(el));
+
+    // Fallback: if observer misses any cards (e.g. already in view on load), show them after 1.2s
+    setTimeout(() => {
+      cardEls.forEach(el => {
+        if (el.classList.contains('pre-reveal')) {
+          el.classList.remove('pre-reveal');
+        }
+      });
+    }, 1200);
+
+    /* --- Stagger reveal: upskill list items (slide in from left) --- */
+    const upskillItems = document.querySelectorAll('.upskill-list li');
+    upskillItems.forEach(li => li.classList.add('pre-reveal'));
+
+    const upskillList = document.querySelector('.upskill-list');
+    if (upskillList) {
+      const listObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          upskillItems.forEach((li, i) => {
+            setTimeout(() => {
+              li.classList.remove('pre-reveal');
+              li.classList.add('play-reveal-left');
+              li.addEventListener('animationend', () => li.classList.remove('play-reveal-left'), { once: true });
+            }, i * 110);
+          });
+          listObs.disconnect();
+        }
+      }, { threshold: 0.15 });
+      listObs.observe(upskillList);
+    }
+
+    /* --- Course search filter --- */
+    const filterInput = document.getElementById('courseFilter');
+    const filterClear = document.getElementById('courseFilterClear');
+    const allCards    = document.querySelectorAll('.course-cards-grid .course-card');
+    const noResults   = document.getElementById('courseNoResults');
+
+    if (filterInput) {
+      filterInput.addEventListener('input', () => {
+        const q = filterInput.value.trim().toLowerCase();
+        filterClear.hidden = !q;
+        let visible = 0;
+        allCards.forEach(card => {
+          const match = !q || card.textContent.toLowerCase().includes(q);
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+        if (noResults) noResults.classList.toggle('show', visible === 0 && q.length > 0);
+      });
+
+      filterClear.addEventListener('click', () => {
+        filterInput.value = '';
+        filterClear.hidden = true;
+        allCards.forEach(card => card.style.display = '');
+        if (noResults) noResults.classList.remove('show');
+        filterInput.focus();
+      });
+    }
+
+    /* --- Section headers fade up --- */
+    document.querySelectorAll('.section-header').forEach(el => {
+      el.classList.add('pre-reveal');
+      const hObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          entries[0].target.classList.remove('pre-reveal');
+          entries[0].target.classList.add('play-reveal-up');
+          entries[0].target.addEventListener('animationend', () =>
+            entries[0].target.classList.remove('play-reveal-up'), { once: true });
+          hObs.disconnect();
+        }
+      }, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
+      hObs.observe(el);
+      // Fallback: show after 1s if observer doesn't fire
+      setTimeout(() => el.classList.remove('pre-reveal'), 1000);
+    });
+
+})();
+  </script>
+</body>
+</html>

@@ -35,7 +35,7 @@ button { font-family: inherit; cursor: pointer; }
   --radius-sm:  8px;
   --trans:      .3s ease;
   --max-w:      1200px;
-  --nav-h:      72px;
+  --nav-h:      96px;
 }
 
 /* ── Container ────────────────────────────────────────────── */
@@ -62,10 +62,10 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ── Image replacement — keeps layout intact when images are added ── */
 /* These rules fire when you swap a placeholder <div> for a real <img> */
-.nav-logo img            { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; flex-shrink: 0; }
+.nav-logo img            { width: auto; height: 155px; object-fit: contain; border-radius: 8px; flex-shrink: 0; }
 .partner-logo img        { height: 160px; width: auto; max-width: 200px; object-fit: contain; }
 .hero-accred-logo img    { width: 100%; height: 100%; object-fit: contain; }
-.hero-accred-items > img { width: 300px; height: 110px; object-fit: cover; flex-shrink: 0; }
+.hero-accred-items > img { width: 300px; height: 150px; object-fit: cover; flex-shrink: 0; }
 .footer-logos            { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
 .footer-logos img        { height: 48px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(0) invert(1); }
 .footer-brand > img      { max-width: 160px; height: 54px; object-fit: contain; margin-bottom: 16px; filter: brightness(0) invert(1); }
@@ -113,6 +113,7 @@ button { font-family: inherit; cursor: pointer; }
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-h);
+  overflow: visible;
   background: rgba(255,255,255,.97);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
@@ -122,19 +123,23 @@ button { font-family: inherit; cursor: pointer; }
 
 .nav {
   display: flex; align-items: center; justify-content: space-between;
-  height: 100%;
+  height: 100%; position: relative;
 }
 
 /* Logo */
 .nav-logo {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center;
   flex-shrink: 0; text-decoration: none;
+  padding: 8px 12px 8px 0;
 }
-.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-.logo-text strong { font-size: 1.1rem; font-weight: 800; }
-.logo-text small   { font-size: .6rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
-.logo-name-primary   { color: var(--blue); }
-.logo-name-secondary { color: var(--muted); }
+.nav-logo-img {
+  height: 80px; width: auto; max-width: 320px;
+  object-fit: contain; display: block;
+}
+@media (max-width: 480px) {
+  .nav-logo-img { height: 56px; max-width: 200px; }
+  .nav-logo img { height: 60px !important; width: auto !important; }
+}
 
 /* Nav menu */
 .nav-menu {
@@ -158,6 +163,8 @@ button { font-family: inherit; cursor: pointer; }
 /* On mobile the dropdown goes position:static so it must fill its own row */
 .nav-item-split > .dropdown { flex-basis: 100%; width: 100%; }
 .nav-toggle-btn { background: none; border: none; padding: 10px; cursor: pointer; color: var(--text); display: none; }
+.nav-courses-label { cursor: default; }
+.nav-courses-label:hover { color: var(--text) !important; background: none !important; }
 
 .nav-link:hover,
 .dropdown-toggle:hover { color: var(--blue); background: var(--light); }
@@ -208,6 +215,104 @@ button { font-family: inherit; cursor: pointer; }
 .dropdown li a:hover { background: var(--light); color: var(--blue); padding-left: 26px; }
 /* Indent course links inside a submenu — must come AFTER .dropdown li a to override padding shorthand */
 .dropdown-submenu li a { padding-left: 32px; }
+
+/* ── Mega Menu — full-width desktop dropdown ─────────────── */
+@media (min-width: 769px) {
+  /* Escape the <li> so dropdown can span full nav width */
+  #qualDropdown { position: static; }
+  #qualDropdown > .mega-menu {
+    position: absolute; top: 100%; left: 0; width: 100%;
+    min-width: unset;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-radius: 0 0 12px 12px;
+    border-top: 3px solid var(--blue);
+    padding: 0; gap: 0;
+  }
+  .mega-col {
+    padding: 20px 20px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  /* Remove right border on every 4th column, remove bottom border on last row */
+  .mega-col:nth-child(4n) { border-right: none; }
+  .mega-col:nth-last-child(-n+4) { border-bottom: none; }
+  /* Hide the + indicator for headers with no sub-courses */
+  .mega-col:not(:has(.mega-course-list)) .mega-col-header::after { content: none; }
+  .mega-col-header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .7px;
+    color: var(--navy) !important; background: transparent !important;
+    padding: 0 0 10px !important; margin-bottom: 10px;
+    border-bottom: 2px solid var(--blue) !important; border-right: none;
+    cursor: pointer;
+  }
+  .mega-col-expand { display: none; } /* expand button hidden on desktop — hover reveals sub-list */
+  .mega-col-header:hover { color: var(--blue) !important; padding-left: 0 !important; background: transparent !important; }
+  .mega-course-list {
+    list-style: none;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  /* Reveal on hover — no click needed on desktop */
+  .mega-col:hover > .mega-course-list { max-height: 500px; }
+  .mega-course-list li a {
+    display: block; padding: 7px 0 !important;
+    font-size: .84rem !important; line-height: 1.4;
+    color: var(--muted) !important; border-bottom: none !important; background: transparent !important;
+  }
+  .mega-course-list li a:hover { color: var(--blue) !important; padding-left: 6px !important; background: transparent !important; }
+  /* Scrollable list for long columns (e.g. Diploma Training) */
+  .mega-col:last-child:hover > .mega-course-list {
+    max-height: 186px; /* ~6 items */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) var(--light);
+  }
+  .mega-col:last-child:hover > .mega-course-list::-webkit-scrollbar { width: 4px; }
+  .mega-col:last-child:hover > .mega-course-list::-webkit-scrollbar-track { background: var(--light); border-radius: 4px; }
+  .mega-col:last-child:hover > .mega-course-list::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 4px; }
+}
+
+/* Mobile: mega menu stacks vertically — each category is a collapsible accordion */
+@media (max-width: 768px) {
+  .mega-menu { display: block !important; }
+  .mega-col { display: block; border-right: none; }
+  .mega-col-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 24px !important;
+    font-size: .75rem !important; font-weight: 700 !important; text-transform: uppercase; letter-spacing: .5px;
+    color: var(--blue) !important; background: rgba(30,127,196,.06) !important;
+    border-bottom: 1px solid var(--border) !important; border-left: 3px solid var(--blue);
+  }
+  /* Expand span — shows on mobile as the accordion toggle */
+  .mega-col-expand {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 400; line-height: 1;
+    color: var(--blue); flex-shrink: 0; margin-left: auto; padding-left: 12px;
+    transition: transform 0.2s ease; pointer-events: all;
+  }
+  .mega-col.open > .mega-col-header > .mega-col-expand { transform: rotate(45deg); }
+  .mega-col-header:hover { padding-left: 24px !important; }
+  .mega-course-list {
+    list-style: none;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .mega-col.open > .mega-course-list { max-height: 500px; }
+  .mega-course-list li a {
+    padding: 10px 24px 10px 36px !important; font-size: .85rem !important;
+    border-bottom: 1px solid var(--border) !important;
+    color: var(--text) !important; background: transparent !important;
+  }
+  .mega-course-list li a:hover { padding-left: 40px !important; }
+  /* Scrollable list for long columns on mobile */
+  .mega-col:last-child.open > .mega-course-list {
+    max-height: 240px; /* ~6 items */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) rgba(0,0,0,0.05);
+  }
+}
 
 /* Nav CTA item */
 .nav-cta-item { margin-left: 8px; }
@@ -290,21 +395,55 @@ button { font-family: inherit; cursor: pointer; }
   font-size: clamp(2rem, 5.5vw, 3.6rem); color: #fff;
   font-weight: 800; line-height: 1.12; max-width: 720px;
   margin-bottom: 20px;
+  transition: opacity 0.4s ease;
 }
 .hero-text {
   color: #fff;
   padding-bottom: 2rem;
   font-size: 20px;
+  transition: opacity 0.4s ease;
 }
 
 .hero-content > .hero-sub {
   color: rgba(255,255,255,.85); font-size: clamp(.95rem, 2vw, 1.18rem);
   max-width: 580px; margin-bottom: 38px; line-height: 1.75;
 }
-.hero-ctas {
-  display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px;
+/* ── Hero Course Search ───────────────────────────────────── */
+.hero-search { position: relative; width: 100%; max-width: 520px; margin-bottom: 40px; }
+.hero-search-box {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.97); border-radius: 12px;
+  padding: 0 18px;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.25);
 }
-.hero-ctas .btn { padding: 15px 32px; font-size: .95rem; }
+.hero-search-box .search-icon { width: 18px; height: 18px; color: #5a6270; flex-shrink: 0; }
+.hero-search-input {
+  flex: 1; border: none; outline: none; background: transparent;
+  padding: 18px 0; font-size: 1rem; color: #1a2030; font-family: inherit;
+}
+.hero-search-input::placeholder { color: #8a94a0; }
+.hero-search-results {
+  position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  list-style: none; overflow: hidden; z-index: 200;
+}
+.hero-search-results[hidden] { display: none; }
+.hero-search-results li a {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 18px; color: #1a2030; gap: 14px;
+  transition: background 0.18s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+.hero-search-results li:last-child a { border-bottom: none; }
+.hero-book-btn { margin-top: 18px; margin-bottom: 28px; }
+.hero-search-results li a:hover { background: #f4f7fa; }
+.result-name { font-size: 0.9rem; font-weight: 500; }
+.result-cat {
+  font-size: 0.75rem; color: #1e7fc4; white-space: nowrap; flex-shrink: 0;
+  background: rgba(30,127,196,0.1); padding: 3px 9px; border-radius: 20px;
+}
+.search-no-results { padding: 14px 18px; color: #5a6270; font-size: 0.9rem; }
 
 /* Slide indicators */
 .hero-indicators { display: flex; gap: 8px; margin-bottom: 0; }
@@ -342,6 +481,7 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 768px) {
   .hero-accred { margin-top: 28px; padding-top: 22px; gap: 14px; }
   .hero-accred-logo { height: 60px; max-width: 160px; }
+  .hero-accred-items img[alt="AoHT Member"] { height: 90px; width: 90px; }
 }
 
 /* ============================================================
@@ -413,7 +553,10 @@ button { font-family: inherit; cursor: pointer; }
 .qualifications { background: var(--light); }
 
 .qual-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+}
+@media (max-width: 900px) {
+  .qual-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .qual-card {
@@ -675,7 +818,7 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 80px 0 0; }
+.footer { background: #071528; color: rgba(255,255,255,.75); padding: 80px 0 0; }
 .footer-grid {
   display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 44px;
   padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,.1);
@@ -715,7 +858,12 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
    ============================================================ */
 @media (max-width: 768px) {
 
-  :root { --nav-h: 64px; }
+  :root { --nav-h: 110px; }
+
+  /* Scale logo down on mobile */
+  .nav-logo img { height: 80px !important; width: auto !important; }
+  .nav-logo-img { height: 80px; max-width: 240px; }
+  .nav-logo { padding: 6px 8px 6px 0; }
 
   .burger { display: flex; }
 
@@ -799,7 +947,7 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
   .hero-content h1 { max-width: 100%; }
   .hero-content > .hero-sub { max-width: 100%; }
   .hero-badge      { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
-  .hero-ctas       { justify-content: center; flex-direction: column; align-items: center; }
+  .hero-search     { max-width: 100%; }
   .hero-indicators { justify-content: center; }
   .hero-accred     { align-items: center; }
 
@@ -827,7 +975,7 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
 
   .accred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; justify-items: center; }
 
-  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .hero-search-input { font-size: 0.95rem; }
 }
 
 /* ============================================================
@@ -998,6 +1146,68 @@ a.level-tag:hover { background: var(--blue); color: #fff; }
   .course-hero-ctas   { flex-direction: column; }
   .course-funding-inner{ flex-direction: column; text-align: center; }
   .course-funding-actions { justify-content: center; }
+}
+
+/* ============================================================
+   CATEGORY COURSE CARDS
+   ============================================================ */
+.category-section { padding: 80px 0; }
+.category-section .section-header { margin-bottom: 48px; }
+
+.course-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+.course-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.course-card-header { display: flex; align-items: flex-start; gap: 14px; }
+.course-level-badge {
+  background: var(--blue); color: #fff;
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+  padding: 5px 12px; border-radius: 20px; white-space: nowrap;
+  flex-shrink: 0; margin-top: 4px;
+}
+.course-card h3 { font-size: 1.1rem; color: var(--navy); line-height: 1.3; margin: 0; }
+
+.course-card-desc { color: var(--muted); font-size: .93rem; line-height: 1.65; margin: 0; flex: 1; }
+
+.course-card-areas h4 {
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .6px;
+  color: var(--muted); margin-bottom: 10px;
+}
+.course-card-areas ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.course-card-areas li {
+  font-size: .82rem; color: var(--text);
+  background: var(--light); padding: 4px 12px; border-radius: 20px;
+}
+
+.course-card-meta {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  padding-top: 16px; border-top: 1px solid var(--border);
+}
+.course-meta-chip {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .8rem; color: var(--muted);
+}
+.course-meta-chip svg { width: 14px; height: 14px; color: var(--blue); flex-shrink: 0; }
+
+.course-card .btn { align-self: flex-start; margin-top: auto; }
+
+@media (max-width: 640px) {
+  .course-cards-grid { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
